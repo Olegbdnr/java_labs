@@ -7,4 +7,5 @@ public class JigSaw extends CuttingTool {
         super(lenOfBlade, typeOfMaterial, manufacturer, type);
     }
 
+
 }
