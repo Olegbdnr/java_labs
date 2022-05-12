@@ -32,6 +32,14 @@ public abstract class CuttingTool {
         return typeOfMaterial;
     }
 
+    public String getHeaders () {
+        return "lengthOfBladeInCm" + "," + "manufacturer" + "," + "typeOfMaterial" + "," +"type";
+    }
+
+    public String toCSV () {
+        return String.format("%d,%s,%s,%s", this.lengthOfBladeInСm, this.manufacturer, this.typeOfMaterial, this.type);
+    }
+
     @Override
     public String toString() {
         return "CuttingTool{" +

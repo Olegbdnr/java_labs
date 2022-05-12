@@ -1,14 +1,11 @@
 package ua.lviv.iot.toolShop.manager;
 
 import org.junit.jupiter.api.*;
-import ua.lviv.iot.toolShop.manager.IShopManager;
 import ua.lviv.iot.toolShop.manager.impl.ToolShopManager;
 import ua.lviv.iot.toolShop.models.*;
-
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 
 class TestManager {
@@ -16,13 +13,8 @@ class TestManager {
     ToolShopManager manager;
     List<CuttingTool> listOfTools;
 
-    @BeforeAll
-    static void setUpBeforeClass() throws Exception {
-
-    }
-
     @BeforeEach
-    public void setUp() throws Exception {
+    public void setUp()  {
         listOfTools = new LinkedList<CuttingTool>();
         JigSaw jigSaw = new JigSaw(32, "Metalic", "DniproM", TypeOfTool.POWER);
         ChainSaw chainSaw = new ChainSaw(43, "Metalic", "DniproM",
@@ -35,10 +27,6 @@ class TestManager {
         manager = new ToolShopManager(listOfTools);
     }
 
-    @AfterEach
-    public void tearDown() throws Exception {
-
-    }
     private void returnNotEmptyList (List<CuttingTool> checkList) {
         Assertions.assertNotNull(checkList);
     }
@@ -87,6 +75,5 @@ class TestManager {
         Assertions.assertEquals(43, result.get(1).getLengthOfBlade());
         Assertions.assertEquals(32, result.get(2).getLengthOfBlade());
     }
-
 
 }
