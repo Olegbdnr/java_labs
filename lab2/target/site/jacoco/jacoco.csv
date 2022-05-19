@@ -1,0 +1,10 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+projects,ua.lviv.iot.toolShop.writer,ToolsWriter,0,50,1,3,0,12,1,3,0,2
+projects,ua.lviv.iot.regex.carNumber,CarNumRegex,0,20,0,0,0,5,0,2,0,2
+projects,ua.lviv.iot.toolShop.models,ChainSaw,10,20,0,0,4,5,1,3,1,3
+projects,ua.lviv.iot.toolShop.models,CuttingTool,11,52,0,0,2,11,2,6,2,6
+projects,ua.lviv.iot.toolShop.models,RippingSaw,3,20,0,0,1,5,1,3,1,3
+projects,ua.lviv.iot.toolShop.models,TypeOfTool,0,21,0,0,0,4,0,1,0,1
+projects,ua.lviv.iot.toolShop.models,JigSaw,3,20,0,0,1,5,1,3,1,3
+projects,ua.lviv.iot.toolShop.models,SortOrder,0,15,0,0,0,3,0,1,0,1
+projects,ua.lviv.iot.toolShop.manager.impl,ToolShopManager,1,73,1,5,0,11,1,10,0,8
