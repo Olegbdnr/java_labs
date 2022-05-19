@@ -1,0 +1,6 @@
+lengthOfBladeInCm,manufacturer,typeOfMaterial,type,haveStartBtn
+32,DniproM,Metalic,POWER,true
+lengthOfBladeInCm,manufacturer,typeOfMaterial,type,isDanger
+43,DniproM,Metalic,FUEL,true
+lengthOfBladeInCm,manufacturer,typeOfMaterial,type,haveHandle
+55,DniproM,Metalic,POWER,true

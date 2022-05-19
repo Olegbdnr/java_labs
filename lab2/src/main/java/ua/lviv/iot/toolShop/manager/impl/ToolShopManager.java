@@ -13,16 +13,19 @@ public class ToolShopManager implements IShopManager {
 
     private List<CuttingTool> listOfTools;
 
-    public ToolShopManager(List<CuttingTool> listOfTools) {
-        this.listOfTools = listOfTools;
-    }
-
-
-    private List<CuttingTool> getTools (SortOrder sortOrder, Comparator<CuttingTool> comparing) {
+    private List<CuttingTool> getToolsByOrder (SortOrder sortOrder, Comparator<CuttingTool> comparing) {
         if (sortOrder.equals(SortOrder.ASC)) {
             return listOfTools.stream().sorted(comparing).collect(Collectors.toList());
         }
         return listOfTools.stream().sorted(comparing.reversed()).collect(Collectors.toList());
+    }
+
+    public List<CuttingTool> getListOfTools() {
+        return listOfTools;
+    }
+
+    public ToolShopManager(List<CuttingTool> listOfTools) {
+        this.listOfTools = listOfTools;
     }
 
     @Override
@@ -38,6 +41,7 @@ public class ToolShopManager implements IShopManager {
 
     @Override
     public List<CuttingTool> sortByLenght (SortOrder sortOrder) {
-        return getTools(sortOrder, Comparator.comparing(CuttingTool::getLengthOfTheWorkSurfaceInСentimeters));
+        return getToolsByOrder(sortOrder, Comparator.comparing(CuttingTool::getLengthOfBlade));
     }
+
 }

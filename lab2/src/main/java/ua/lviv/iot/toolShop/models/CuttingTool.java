@@ -1,7 +1,7 @@
 package ua.lviv.iot.toolShop.models;
 
 public abstract class CuttingTool {
-    private int lengthOfTheWorkSurfaceInСentimeters;
+    private int lengthOfBladeInСm;
 
     private String manufacturer;
 
@@ -9,15 +9,15 @@ public abstract class CuttingTool {
     private TypeOfTool type;
 
 
-    public CuttingTool(int lengthOfTheWorkSurfaceInСentimeters, String typeOfMaterial, String manufacturer, TypeOfTool type) {
-        this.lengthOfTheWorkSurfaceInСentimeters = lengthOfTheWorkSurfaceInСentimeters;
+    public CuttingTool(int lengthOfBladeInСm, String typeOfMaterial, String manufacturer, TypeOfTool type) {
+        this.lengthOfBladeInСm = lengthOfBladeInСm;
         this.manufacturer = manufacturer;
         this.typeOfMaterial = typeOfMaterial;
         this.type = type;
     }
 
-    public int getLengthOfTheWorkSurfaceInСentimeters() {
-        return lengthOfTheWorkSurfaceInСentimeters;
+    public int getLengthOfBlade() {
+        return lengthOfBladeInСm;
     }
 
     public String getManufacturer() {
@@ -32,10 +32,18 @@ public abstract class CuttingTool {
         return typeOfMaterial;
     }
 
+    public String getHeaders () {
+        return "lengthOfBladeInCm" + "," + "manufacturer" + "," + "typeOfMaterial" + "," +"type";
+    }
+
+    public String toCSV () {
+        return String.format("%d,%s,%s,%s", this.lengthOfBladeInСm, this.manufacturer, this.typeOfMaterial, this.type);
+    }
+
     @Override
     public String toString() {
         return "CuttingTool{" +
-                "lengthOfTheWorkSurfaceInСentimeters=" + this.lengthOfTheWorkSurfaceInСentimeters +
+                "lengthOfTheWorkSurfaceInСentimeters=" + this.lengthOfBladeInСm +
                 ", manufacturer='" + this.manufacturer + '\'' +
                 ", typeOfMaterial='" + this.typeOfMaterial + '\'' +
                 '}';
