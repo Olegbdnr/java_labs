@@ -8,16 +8,16 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ToolsWriter {
-    private String previousClassName = "";
+    private String previosClassName = "";
 
     public void writeToFile(ToolShopManager manager, String filePath) throws IOException {
         try (FileWriter writer = new FileWriter(filePath)) {
             for (CuttingTool tool : manager.getListOfTools()) {
-                if (!previousClassName.equals(tool.getClass().getSimpleName())) {
+                if (!previosClassName.equals(tool.getClass().getSimpleName())) {
                     writer.write(tool.getHeaders());
+                    previosClassName = tool.getClass().getSimpleName();
                     writer.write("\r\n");
                 }
-                previousClassName = tool.getClass().getSimpleName();
                 writer.write(tool.toCSV());
                 writer.write("\r\n");
             }
